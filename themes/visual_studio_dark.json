@@ -1,0 +1,48 @@
+{
+	"name": "Visual Studio Dark+",
+	"type": "dark",
+	
+	// from https://github.com/tomasiser/vim-code-dark
+	"variables": {
+		"background": "#1E1E1E",
+		"grey": "#808080",
+		"foreground": "#D4D4D4",
+		"lightBlue": "#9CDCFE",
+		"blue": "#569CD6",
+		"blueGreen": "#4EC9B0",
+		"green": "#608B4E",
+		"lightGreen": "#B5CEA8",
+		"yellow": "#DCDCAA",
+		"yellowOrange": "#D7BA7D",
+		"orange": "#CE9178",
+		"lightRed": "#D16969",
+		"red": "#F44747",
+		"pink": "#C586C0",
+		"violet": "#646695"
+	},
+	"background": "@background",
+	"foreground": "@foreground",
+	"selectionBackground": "#264F78",
+	"currentLine": "#282828",
+	"lineNumbers": "#858585",
+	"comment": "@green",
+	"keyword": "@blue",
+	"number": "@lightGreen",
+	"string": "@orange",
+	"class": "@blueGreen",
+	"method": "@yellow",
+	"field": "#4CBAF6",
+	"localVariable": "@lightBlue",
+	"annotationKey": "@yellow",
+	"deprecated": {
+		"color": "@grey",
+		"strikethrough": true
+	},
+	"occurrence": "#083D5A",
+	"docTag": "@blue",
+	"docLink": "&docTag",
+	"docXmlTag": "&docTag",
+	"key": "@lightBlue",
+	"xmlTag": "@blue",
+	"xmlAttribute": "@lightBlue"
+}

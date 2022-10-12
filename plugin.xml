@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="io.toadlabs.betterthemes.adapter" name="Theme Adapter" schema="schema/io.toadlabs.betterthemes.adapter.exsd"/>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="io.toadlabs.betterthemes.preferences.ThemesPreferencePage"
+            id="io.toadlabs.betterthemes.preferences.ThemesPreferencePage"
+            name="BetterThemes">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="io.toadlabs.betterthemes.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.e4.ui.css.swt.theme">
+         <theme id="io.toadlabs.betterthemes.dark" label="BetterThemes" basestylesheeturi="betterthemes:///ui-theme.css"/>
+   </extension>
+   <extension
+         point="io.toadlabs.betterthemes.adapter">
+      <adapter
+            class="io.toadlabs.betterthemes.adapter.JdtAdapter" plugin="org.eclipse.jdt.ui">
+      </adapter>
+      <adapter
+            class="io.toadlabs.betterthemes.adapter.TextEditorAdapter" plugin="org.eclipse.ui.editors">
+      </adapter>
+      <adapter
+            class="io.toadlabs.betterthemes.adapter.JsonEditAdapter" plugin="jsonedit-core">
+      </adapter>
+      <adapter
+            class="io.toadlabs.betterthemes.adapter.Tm4eAdapter" plugin="org.eclipse.tm4e.ui">
+      </adapter>
+      <adapter
+            class="io.toadlabs.betterthemes.adapter.GenericTextEditorAdapter"
+            plugin="org.eclipse.ui.genericeditor">
+      </adapter>
+      <adapter
+            class="io.toadlabs.betterthemes.adapter.CdtAdapter"
+            plugin="org.eclipse.cdt.ui">
+      </adapter>
+      <adapter
+            class="io.toadlabs.betterthemes.adapter.YamlEditorAdapter"
+            plugin="de.jcup.yamleditor">
+      </adapter>
+   </extension>
+</plugin>

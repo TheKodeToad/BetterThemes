@@ -1,0 +1,60 @@
+{
+	"name": "Atom One Dark",
+	"type": "dark",
+	"variables": {
+		// config
+		"syntax-hue": "220",
+		"syntax-saturation": "13%",
+		"syntax-brightness": "18%",
+
+		// monochrome
+		"mono-1": "hsl(@syntax-hue, 14%, 71%)",
+		"mono-2": "hsl(@syntax-hue, 9%, 55%)",
+		"mono-3": "hsl(@syntax-hue, 10%, 40%)",
+
+		// colours
+		"hue-1":	"hsl(187, 47%, 55%)",
+		"hue-2":	"hsl(207, 82%, 66%)",
+		"hue-3":	"hsl(286, 60%, 67%)",
+		"hue-4":	"hsl( 95, 38%, 62%)",
+		"hue-5":	"hsl(355, 65%, 65%)",
+		"hue-5-2":	"hsl(  5, 48%, 51%)",
+		"hue-6":	"hsl( 29, 54%, 61%)",
+		"hue-6-2":	"hsl( 39, 67%, 69%)",
+
+		// base colours
+		"syntax-fg": "@mono-1",
+		"syntax-bg": "hsl(@syntax-hue, @syntax-saturation, @syntax-brightness)"
+	},
+	"foreground": "@syntax-fg",
+	"background": "@syntax-bg",
+	"currentLine": "#2C323C",
+	"lineNumbers": "#4B5363",
+	"selectionBackground": "#3E4451",
+	"comment": {
+		"colour": "@mono-3",
+		"italic": true
+	},
+	"keyword": "@hue-3",
+	"string": "@hue-4",
+	"number": "@hue-6",
+	"class": "@hue-6-2",
+	"method": "@hue-2",
+	"field": "@hue-5",
+	"constant": "@hue-6",
+	"docTag": {
+		"colour": "&keyword",
+		"italic": true
+	},
+	"xmlTag": "@hue-5",
+	"xmlAttribute": "@hue-6",
+	"argumentPopupBackground": "#252830",
+	"annotationKey": "@hue-5",
+	"templateParameter": "@hue-1",
+	"deprecated": {
+		"colour": "@mono-2",
+		"strikethrough": true
+	},
+	"macro": "@hue-1",
+	"occurrence": "#343C47"
+}
