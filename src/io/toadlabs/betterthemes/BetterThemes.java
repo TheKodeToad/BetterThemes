@@ -8,10 +8,10 @@ import org.osgi.framework.*;
 public final class BetterThemes extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "io.toadlabs.betterthemes";
-//	public static final String THEME_ID = "io.toadlabs.betterthemes.dark";
 	public static final String ADAPTER_EXT_ID = "io.toadlabs.betterthemes.adapter";
 
 	private static BetterThemes instance;
+
 	@Getter
 	private ThemeManager themes;
 

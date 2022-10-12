@@ -8,9 +8,9 @@ import org.eclipse.jface.preference.*;
 public class Preferences {
 
 	public final String THEME = "themeId";
-	
+
 	public IPreferenceStore get() {
 		return BetterThemes.get().getPreferenceStore();
 	}
-	
+
 }

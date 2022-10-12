@@ -7,7 +7,7 @@ import lombok.*;
 @Data
 @EqualsAndHashCode
 @RequiredArgsConstructor
-public class ThemeKey {
+public final class ThemeKey {
 
 	private final String id;
 	private final ThemeKey inheritsFrom;

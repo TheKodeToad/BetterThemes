@@ -6,11 +6,9 @@ import java.util.*;
 import io.toadlabs.betterthemes.*;
 import io.toadlabs.betterthemes.adapter.*;
 import io.toadlabs.betterthemes.preferences.Preferences;
-import io.toadlabs.betterthemes.utils.*;
 import lombok.*;
 import org.eclipse.core.runtime.*;
 import org.eclipse.core.runtime.preferences.*;
-import org.eclipse.e4.ui.css.swt.theme.*;
 import org.eclipse.ui.*;
 import org.osgi.service.prefs.*;
 
@@ -138,35 +136,6 @@ public final class ThemeManager {
 	}
 
 	public void apply(IWorkbench workbench) {
-		IThemeEngine engine = Utils.getThemeEngine(workbench);
-//		if(engine.getActiveTheme().getId().equals(BetterThemes.THEME_ID)) {
-		applyNow(workbench, engine);
-//		}
-	}
-
-	public void applyNow(IWorkbench workbench) {
-		applyNow(workbench, Utils.getThemeEngine(workbench));
-	}
-
-	private void applyNow(IWorkbench workbench, IThemeEngine engine) {
-//		for(Shell shell : workbench.getDisplay().getShells()) {
-//			shell.setRedraw(false);
-//			shell.reskin(SWT.ALL);
-//			try {
-//				applyUi(shell);
-//			}
-//			finally {
-//				shell.setRedraw(true);
-//			}
-//		}
-//		workbench.getDisplay().addListener(SWT.Skin, (event) -> {
-//			if(event.widget instanceof Control) {
-//				applyUi((Control) event.widget);
-//			}
-//		});
-
-//		OS.setTheme(ThemeManager.get().getActive().getType() == ThemeType.DARK);
-
 		ThemeData active = getActive();
 		adapters.forEach((adapter, plugin) -> {
 			if(plugin != null) {
@@ -187,16 +156,6 @@ public final class ThemeManager {
 			}
 		});
 	}
-
-//	private void applyUi(Control control) {
-//		control.setBackground(new Color(0, 0, 0));
-//
-//		if(control instanceof Composite) {
-//			for(Control child : ((Composite) control).getChildren()) {
-//				applyUi(child);
-//			}
-//		}
-//	}
 
 	public static ThemeManager get() {
 		return BetterThemes.get().getThemes();

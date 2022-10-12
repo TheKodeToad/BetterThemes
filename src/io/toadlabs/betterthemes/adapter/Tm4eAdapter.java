@@ -12,18 +12,13 @@ import org.eclipse.tm4e.ui.*;
 import org.eclipse.tm4e.ui.themes.*;
 import org.osgi.service.prefs.*;
 
-public class Tm4eAdapter extends ThemeAdapter {
+public final class Tm4eAdapter extends ThemeAdapter {
 
 	private static final String PREFIX = "BetterThemes_";
 
 	@Override
 	public void apply(ThemeData theme, IEclipsePreferences preferences) throws BackingStoreException {
 		try {
-//			for(IEditorReference reference : PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getEditorReferences()) {
-//				IEditorPart editor = reference.getEditor(false);
-////				IWorkbenchPart part = reference.getPart(false);
-//			}
-
 			IThemeManager textMateThemes = TMUIPlugin.getThemeManager();
 			for(ITheme unregisterTheme : textMateThemes.getThemes()) {
 				if(unregisterTheme.getId().startsWith(PREFIX)) {
@@ -65,8 +60,6 @@ public class Tm4eAdapter extends ThemeAdapter {
 			writer.write(".string,.regexp{" + Utils.cssStyle(theme.get(ThemeKey.STRING)) + "}");
 			writer.write(".keyword.operator{" + Utils.cssStyle(theme.get(ThemeKey.OPERATOR)) + "}");
 			writer.write(".support.type,.support.class,.entity.name.class,.entity.other.inherited-class{" + Utils.cssStyle(theme.get(ThemeKey.CLASS)) + "}");
-//			writer.write(".entity.other.inherited-class{" + Utils.cssStyle(theme.get(ThemeKey.ABSTRACT_CLASS)) + "}");
-
 			writer.write(".entity.name.interface{" + Utils.cssStyle(theme.get(ThemeKey.INTERFACE)) + "}");
 			writer.write(".name.enum{" + Utils.cssStyle(theme.get(ThemeKey.ENUM)) + "}");
 			writer.write(".support.function,.entity.name.function{" + Utils.cssStyle(theme.get(ThemeKey.METHOD)) + "}");
@@ -75,85 +68,7 @@ public class Tm4eAdapter extends ThemeAdapter {
 			writer.write(".variable.parameter{" + Utils.cssStyle(theme.get(ThemeKey.ARGUMENT)) + "}");
 			writer.write(".entity.name.tag{" + Utils.cssStyle(theme.get(ThemeKey.XML_TAG)) + "}");
 			writer.write(".entity.other.attribute-name{" + Utils.cssStyle(theme.get(ThemeKey.XML_ATTRIBUTE)) + "}");
-			//			writer.write(".comment.block.documentation{color:" + Utils. "}");
-
-
-
-
-
-
-
-
-
-
-
-
-
-//			writer.write(".emphasis{font-style: italic}"
-//					+ ".strong{font-weight: bold}"
-//					+ ".comment{" + Utils.cssStyle(theme.get(ThemeKey.COMMENT)) + "}"
-//					+ ".comment.block{" + Utils.cssStyle(theme.get(ThemeKey.MULTILINE_COMMENT)) + "}"
-//					+ ".comment.documentation{" + Utils.cssStyle(theme.get(ThemeKey.DOC)) + "}"
-//					+ ".constant.language{" + Utils.cssColour(theme.get(ThemeKey.KEYWORD)) + "}"
-//					+ ".constant.numeric{" + Utils.cssStyle(theme.get(ThemeKey.NUMBER)) + "}"
-//					+ ".constant.regexp{" + Utils.cssStyle(theme.get(ThemeKey.STRING)) + "}"
-//					+ ".entity.name.tag{" + Utils.cssStyle(theme.get(ThemeKey.XML_TAG)) + "}"
-//					+ ".entity.other.attribute-name{" + Utils.cssStyle(theme.get(ThemeKey.XML_ATTRIBUTE)) + "}"
-//					+ ".invalid{" + Utils.cssStyle(theme.get(ThemeKey.ERROR)) + "}"
-////					+ ".markup.underline{text-decoration: underline}\n"
-////					+ ".markup.bold { font-weight: bold; color: rgba(86, 156, 214, 1); }\n"
-////					+ ".markup.heading { font-weight: bold; color: rgba(86, 156, 214, 1); }\n"
-////					+ ".markup.italic { font-style: italic; }\n"
-////					+ ".markup.inserted { color: rgba(181, 206, 168, 1); }\n"
-////					+ ".markup.deleted { color: rgba(206, 145, 120, 1); }\n"
-////					+ ".markup.changed { color: rgba(86, 156, 214, 1); }\n"
-////					+ ".markup.punctuation.quote.beginning { color: rgba(96, 139, 78, 1); }\n"
-////					+ ".markup.punctuation.list.beginning { color: rgba(103, 150, 230, 1); }\n"
-////					+ ".markup.inline.raw { color: rgba(206, 145, 120, 1); }\n"
-//					+ ".meta.selector { color: rgba(215, 186, 125, 1); }\n"
-//					+ ".punctuation.definition.tag { color: rgba(128, 128, 128, 1); }\n"
-//					+ ".meta.preprocessor { color: rgba(86, 156, 214, 1); }\n"
-//					+ ".meta.preprocessor.string {" + Utils.cssStyle(theme.get(ThemeKey.STRING)) + "}\n"
-//					+ ".meta.preprocessor.numeric {" + Utils.cssStyle(theme.get(ThemeKey.NUMBER)) + "}\n"
-//					+ ".meta.structure.dictionary.key.python { color: rgba(156, 220, 254, 1); }\n"
-//					+ ".meta.header.diff { color: rgba(86, 156, 214, 1); }\n"
-//					+ ".storage { color: rgba(86, 156, 214, 1); }\n"
-//					+ ".storage.type { color: rgba(86, 156, 214, 1); }\n"
-//					+ ".storage.modifier { color: rgba(86, 156, 214, 1); }\n"
-//					+ ".string{" + Utils.cssStyle(theme.get(ThemeKey.STRING)) + "}\n"
-//					+ ".support.type.property-name { color: rgba(156, 220, 254, 1); }\n"
-//					+ ".keyword {" + Utils.cssStyle(theme.get(ThemeKey.KEYWORD)) + "}\n"
-//					+ ".keyword.operator{" + Utils.cssColour(theme.get(ThemeKey.OPERATOR)) + "}"
-//					+ ".keyword.operator.new{" + Utils.cssColour(theme.get(ThemeKey.KEYWORD)) + "}\n"
-//					+ ".constant.sha.git-rebase { color: rgba(181, 206, 168, 1); }\n"
-//					+ ".storage.modifier.import.java { color: rgba(212, 212, 212, 1); }\n"
-//					+ ".storage.modifier.package.java { color: rgba(212, 212, 212, 1); }\n"
-//					+ ".variable.language { color: rgba(86, 156, 214, 1); }\n"
-//					+ ".entity.name.function { color: rgba(220, 220, 170, 1); }\n"
-//					+ ".support.function { color: rgba(220, 220, 170, 1); }\n"
-//					+ ".meta.return-type { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".support.class { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".support.type { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".entity.name.type { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".storage.type.cs { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".storage.type.java { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".meta.return.type { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".meta.type.cast.expr { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".meta.type.new.expr { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".support.constant.math { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".support.constant.dom { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".support.constant.json { color: rgba(78, 201, 176, 1); }\n"
-//					+ ".keyword.control { color: rgba(197, 134, 192, 1); }\n"
-//					+ ".variable.parameter { color: rgba(156, 220, 254, 1); }\n"
-//					+ ".variable { color: rgba(156, 220, 254, 1); }\n"
-//					+ ".variable.name { color: rgba(156, 220, 254, 1); }\n"
-//					+ ".support.variable { color: rgba(156, 220, 254, 1); }\n"
-//					+ ".object-literal.member.key {" + theme.get(ThemeKey.KEY) + "}\n"
-//					+ ".support.property-value { color: rgba(206, 145, 120, 1); }\n"
-//					+ ".constant.rgb-value {" + theme.get(ThemeKey.STRING) + "}\n"
-//					+ ".support.property-value.scss { color: rgba(206, 145, 120, 1); }\n"
-//					+ ".constant.rgb-value.scss { color: rgba(206, 145, 120, 1); }\n"
-//					+ ".entity.name.function.tag { color: rgba(86, 156, 214, 1); }");
+			// TODO finish
 		}
 
 		return file.getAbsolutePath();

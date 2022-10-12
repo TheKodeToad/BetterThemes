@@ -4,7 +4,7 @@ import io.toadlabs.betterthemes.theme.*;
 import org.eclipse.core.runtime.preferences.*;
 import org.osgi.service.prefs.*;
 
-public class GenericTextEditorAdapter extends ThemeAdapter {
+public final class GenericTextEditorAdapter extends ThemeAdapter {
 
 	@Override
 	public void apply(ThemeData theme, IEclipsePreferences preferences) throws BackingStoreException {

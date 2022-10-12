@@ -4,7 +4,7 @@ import lombok.*;
 import org.eclipse.swt.graphics.*;
 
 @AllArgsConstructor
-public class ThemeStyle {
+public final class ThemeStyle {
 
 	public static final int BOLD = 1, ITALIC = 2, STRIKETHOUGH = 4, UNDERLINE = 8;
 

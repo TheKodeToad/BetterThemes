@@ -17,10 +17,6 @@
       </initializer>
    </extension>
    <extension
-         point="org.eclipse.e4.ui.css.swt.theme">
-         <theme id="io.toadlabs.betterthemes.dark" label="BetterThemes" basestylesheeturi="betterthemes:///ui-theme.css"/>
-   </extension>
-   <extension
          point="io.toadlabs.betterthemes.adapter">
       <adapter
             class="io.toadlabs.betterthemes.adapter.JdtAdapter" plugin="org.eclipse.jdt.ui">
