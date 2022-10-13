@@ -41,5 +41,6 @@
 	"xmlTag": "@blue",
 	"xmlAttribute": "@yellow",
 	"directive": "@red",
-	"templateParameter": "@violet"
+	"templateParameter": "@violet",
+	"occurrence": "#ded8c7"
 }

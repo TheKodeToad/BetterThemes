@@ -42,5 +42,6 @@
 	"xmlAttribute": "@yellow",
 	"uiBackground": "#063643",
 	"directive": "@red",
-	"templateParameter": "@violet"
+	"templateParameter": "@violet",
+	"occurrence": "#094352"
 }

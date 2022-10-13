@@ -66,7 +66,7 @@ public final class ThemeKey {
 			XML_ATTRIBUTE				= register(new ThemeKey("xmlAttribute", FOREGROUND)),
 			KEY							= register(new ThemeKey("key", FIELD)),
 			ERROR						= register(new ThemeKey("error", FOREGROUND)),
-			OCCURRENCE					= register(new ThemeKey("occurrence", BACKGROUND)),
+			OCCURRENCE					= register(new ThemeKey("occurrence", CURRENT_LINE)),
 			WRITE_OCCURRENCE			= register(new ThemeKey("writeOccurrence", OCCURRENCE)),
 			TEXT_OCCURRENCE				= register(new ThemeKey("textOccurrence", OCCURRENCE)),
 			ADDED_LINE					= register(new ThemeKey("addedLine", BACKGROUND)),
