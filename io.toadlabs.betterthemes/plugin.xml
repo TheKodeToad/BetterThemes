@@ -4,7 +4,8 @@
    <extension-point id="io.toadlabs.betterthemes.adapter" name="Theme Adapter" schema="schema/io.toadlabs.betterthemes.adapter.exsd"/>
    <extension
          point="org.eclipse.ui.preferencePages">
-      <page
+      <page	
+      		category="org.eclipse.ui.preferencePages.Views"
             class="io.toadlabs.betterthemes.preferences.ThemesPreferencePage"
             id="io.toadlabs.betterthemes.preferences.ThemesPreferencePage"
             name="BetterThemes">
