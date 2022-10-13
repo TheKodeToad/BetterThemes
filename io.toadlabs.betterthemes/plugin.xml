@@ -19,7 +19,7 @@
    <extension
          point="io.toadlabs.betterthemes.adapter">
       <adapter
-            class="io.toadlabs.betterthemes.adapter.PdeAdapter" plugin="org.eclipse.pde.ui">
+            class="io.toadlabs.betterthemes.adapter.JdtAdapter" plugin="org.eclipse.jdt.ui">
       </adapter>
       <adapter
             class="io.toadlabs.betterthemes.adapter.TextEditorAdapter" plugin="org.eclipse.ui.editors">
@@ -45,6 +45,13 @@
       <adapter
             class="io.toadlabs.betterthemes.adapter.YamlEditorAdapter"
             plugin="de.jcup.yamleditor">
+      </adapter>
+      <adapter
+            class="io.toadlabs.betterthemes.adapter.PdeAdapter" plugin="org.eclipse.pde.ui">
+      </adapter>
+      <adapter
+            class="io.toadlabs.betterthemes.adapter.AntAdapter"
+            plugin="org.eclipse.ant.ui">
       </adapter>
    </extension>
 </plugin>
