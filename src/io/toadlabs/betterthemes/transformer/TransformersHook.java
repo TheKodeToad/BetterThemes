@@ -2,6 +2,7 @@ package io.toadlabs.betterthemes.transformer;
 
 import java.util.*;
 
+import io.toadlabs.betterthemes.transformer.impl.*;
 import org.objectweb.asm.*;
 import org.objectweb.asm.tree.*;
 import org.osgi.framework.hooks.weaving.*;
@@ -11,12 +12,13 @@ public final class TransformersHook implements WeavingHook {
 	private final List<Transformer> transformers = new ArrayList<>();
 
 	{
-//		transformers.add(new IBeamTransformer());
+		transformers.add(new CSSSWTColorHelperTransformer());
 	}
 
 	@Override
 	public void weave(WovenClass wovenClass) {
-		boolean any = transformers.stream().anyMatch((transformer) -> transformer.isApplicable(wovenClass.getClassName()));
+		boolean any = transformers.stream()
+				.anyMatch((transformer) -> transformer.isApplicable(wovenClass.getClassName()));
 
 		if(!any) {
 			return;

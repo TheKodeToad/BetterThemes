@@ -68,6 +68,8 @@ public final class Tm4eAdapter extends ThemeAdapter {
 			writer.write(".variable.parameter{" + Utils.cssStyle(theme.get(ThemeKey.ARGUMENT)) + "}");
 			writer.write(".entity.name.tag{" + Utils.cssStyle(theme.get(ThemeKey.XML_TAG)) + "}");
 			writer.write(".entity.other.attribute-name{" + Utils.cssStyle(theme.get(ThemeKey.XML_ATTRIBUTE)) + "}");
+			writer.write(".editor{background-color:" + Utils.cssStyle(theme.get(ThemeKey.BACKGROUND)) + ";color:"
+					+ Utils.cssStyle(theme.get(ThemeKey.FOREGROUND)) + "}");
 			// TODO finish
 		}
 
