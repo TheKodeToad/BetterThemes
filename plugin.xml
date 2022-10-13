@@ -13,7 +13,7 @@
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="io.toadlabs.betterthemes.preferences.PreferenceInitializer">
+            class="io.toadlabs.betterthemes.preferences.PreferenceInitialiser">
       </initializer>
    </extension>
    <extension

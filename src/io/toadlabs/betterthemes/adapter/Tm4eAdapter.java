@@ -52,7 +52,7 @@ public final class Tm4eAdapter extends ThemeAdapter {
 	}
 
 	private String generateTheme(ThemeData theme) throws IOException {
-		File file = BetterThemes.get().getStateLocation().append("tm4e.css").toFile();
+		File file = new File(BetterThemes.getData(), "tm4e.css");
 		try(FileWriter writer = new FileWriter(file)) {
 			writer.write(".comment{" + Utils.cssStyle(theme.get(ThemeKey.COMMENT)) + "}");
 			writer.write(".comment.block{" + Utils.cssStyle(theme.get(ThemeKey.MULTILINE_COMMENT)) + "}");

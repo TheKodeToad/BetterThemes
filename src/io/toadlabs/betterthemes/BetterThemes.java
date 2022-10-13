@@ -1,7 +1,8 @@
 package io.toadlabs.betterthemes;
 
+import java.io.*;
+
 import io.toadlabs.betterthemes.theme.*;
-import lombok.*;
 import org.eclipse.ui.plugin.*;
 import org.osgi.framework.*;
 
@@ -12,14 +13,20 @@ public final class BetterThemes extends AbstractUIPlugin {
 
 	private static BetterThemes instance;
 
-	@Getter
 	private ThemeManager themes;
+
+	public ThemeManager getThemes() {
+		if(themes == null) {
+			themes = new ThemeManager();
+		}
+
+		return themes;
+	}
 
 	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
-		themes = new ThemeManager();
 	}
 
 	@Override
@@ -30,6 +37,10 @@ public final class BetterThemes extends AbstractUIPlugin {
 
 	public static BetterThemes get() {
 		return instance;
+	}
+
+	public static File getData() {
+		return get().getStateLocation().toFile();
 	}
 
 }

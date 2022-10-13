@@ -23,7 +23,7 @@ public final class ThemeManager {
 	private final TreeMap<String, ThemeData> themes = new TreeMap<>();
 
 	{
-		folder = BetterThemes.get().getStateLocation().append("themes").toFile();
+		folder = new File(BetterThemes.getData(), "themes");
 
 		if(!folder.exists()) {
 			folder.mkdirs();

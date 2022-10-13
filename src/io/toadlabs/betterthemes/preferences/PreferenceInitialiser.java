@@ -4,7 +4,7 @@ import io.toadlabs.betterthemes.*;
 import org.eclipse.core.runtime.preferences.*;
 import org.eclipse.jface.preference.*;
 
-public final class PreferenceInitializer extends AbstractPreferenceInitializer {
+public final class PreferenceInitialiser extends AbstractPreferenceInitializer {
 
 	@Override
 	public void initializeDefaultPreferences() {
