@@ -6,7 +6,6 @@ import java.util.*;
 import io.toadlabs.betterthemes.*;
 import io.toadlabs.betterthemes.adapter.*;
 import io.toadlabs.betterthemes.preferences.Preferences;
-import lombok.*;
 import org.eclipse.core.runtime.*;
 import org.eclipse.core.runtime.preferences.*;
 import org.eclipse.ui.*;
@@ -17,7 +16,6 @@ import org.osgi.service.prefs.*;
  */
 public final class ThemeManager {
 
-	@Getter
 	private final File folder;
 	private final Map<ThemeAdapter, String> adapters = new HashMap<>();
 	private final TreeMap<String, ThemeData> themes = new TreeMap<>();
@@ -189,6 +187,10 @@ public final class ThemeManager {
 		}
 
 		return theme.getName();
+	}
+
+	public File getFolder() {
+		return folder;
 	}
 
 }

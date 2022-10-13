@@ -7,11 +7,8 @@ import com.google.gson.*;
 import com.google.gson.stream.*;
 import io.toadlabs.betterthemes.*;
 import io.toadlabs.betterthemes.utils.*;
-import lombok.*;
 import org.eclipse.swt.graphics.*;
 
-@Data
-@EqualsAndHashCode
 public final class ThemeData implements Comparable<ThemeData> {
 
 	private final Optional<File> file;
@@ -245,6 +242,39 @@ public final class ThemeData implements Comparable<ThemeData> {
 		}
 
 		return result;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public Optional<File> getFile() {
+		return file;
+	}
+
+	public ThemeType getType() {
+		return type;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(file, name, properties, type, variables);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj) {
+			return true;
+		}
+
+		if(!(obj instanceof ThemeData)) {
+			return false;
+		}
+
+		ThemeData other = (ThemeData) obj;
+		return Objects.equals(file, other.file) && Objects.equals(name, other.name)
+				&& Objects.equals(properties, other.properties) && type == other.type
+				&& Objects.equals(variables, other.variables);
 	}
 
 }

@@ -5,27 +5,25 @@ import java.nio.charset.*;
 
 import com.google.gson.*;
 import io.toadlabs.betterthemes.theme.*;
-import lombok.experimental.*;
 import org.eclipse.e4.ui.css.swt.theme.*;
 import org.eclipse.e4.ui.model.application.*;
 import org.eclipse.swt.graphics.*;
 import org.eclipse.ui.*;
 
-@UtilityClass
-public class Utils {
+public final class Utils {
 
-	public IThemeEngine getThemeEngine(IWorkbench workbench) {
+	public static IThemeEngine getThemeEngine(IWorkbench workbench) {
 		MApplication app = workbench.getService(MApplication.class);
 		return app.getContext().get(IThemeEngine.class);
 	}
 
-	public RGB cssColour(String value) {
+	public static RGB cssColour(String value) {
 		org.silentsoft.csscolor4j.Color colour = org.silentsoft.csscolor4j.Color.valueOf(value);
 		// convert to RGA to use less memory
 		return new RGB(colour.getRed(), colour.getGreen(), colour.getBlue());
 	}
 
-	public String cssStyle(ThemeStyle style) {
+	public static String cssStyle(ThemeStyle style) {
 		if(style == null) {
 			return null;
 		}
@@ -56,7 +54,7 @@ public class Utils {
 		return builder.toString();
 	}
 
-	public String cssColour(ThemeStyle style) {
+	public static String cssColour(ThemeStyle style) {
 		if(style == null) {
 			return null;
 		}
@@ -64,7 +62,7 @@ public class Utils {
 		return cssColour(style.getRgb());
 	}
 
-	public String cssColour(RGB rgb) {
+	public static String cssColour(RGB rgb) {
 		if(rgb == null) {
 			return null;
 		}
@@ -72,7 +70,7 @@ public class Utils {
 		return String.format("#%02x%02x%02x", rgb.red, rgb.green, rgb.blue);
 	}
 
-	public String eclipseColour(ThemeStyle style) {
+	public static String eclipseColour(ThemeStyle style) {
 		if(style == null) {
 			return null;
 		}
@@ -80,11 +78,12 @@ public class Utils {
 		return eclipseFormat(style.getRgb());
 	}
 
-	public String eclipseFormat(RGB rgb) {
+	public static String eclipseFormat(RGB rgb) {
 		if(rgb == null) {
 			return null;
 		}
 
+		// yes, I know there's a better way to do this
 		return String.format("%d,%d,%d", rgb.red, rgb.green, rgb.blue);
 	}
 

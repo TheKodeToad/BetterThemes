@@ -2,11 +2,6 @@ package io.toadlabs.betterthemes.theme;
 
 import java.util.*;
 
-import lombok.*;
-
-@Data
-@EqualsAndHashCode
-@RequiredArgsConstructor
 public final class ThemeKey {
 
 	private final String id;
@@ -78,5 +73,37 @@ public final class ThemeKey {
 			MODIFIED_LINE				= register(new ThemeKey("modifiedLine", BACKGROUND)),
 			REMOVED_LINE				= register(new ThemeKey("removedLine", BACKGROUND)),
 			MATCHING_BRACKET			= register(new ThemeKey("matchingBracket", FOREGROUND));
+
+	public ThemeKey(String id, ThemeKey inheritsFrom) {
+		this.id = id;
+		this.inheritsFrom = inheritsFrom;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public ThemeKey getInheritsFrom() {
+		return inheritsFrom;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, inheritsFrom);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj) {
+			return true;
+		}
+
+		if(!(obj instanceof ThemeKey)) {
+			return false;
+		}
+
+		ThemeKey other = (ThemeKey) obj;
+		return Objects.equals(id, other.id) && Objects.equals(inheritsFrom, other.inheritsFrom);
+	}
 
 }

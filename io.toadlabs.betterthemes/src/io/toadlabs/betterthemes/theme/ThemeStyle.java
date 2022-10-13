@@ -1,9 +1,9 @@
 package io.toadlabs.betterthemes.theme;
 
-import lombok.*;
+import java.util.*;
+
 import org.eclipse.swt.graphics.*;
 
-@AllArgsConstructor
 public final class ThemeStyle {
 
 	public static final int BOLD = 1, ITALIC = 2, STRIKETHOUGH = 4, UNDERLINE = 8;
@@ -11,11 +11,13 @@ public final class ThemeStyle {
 	public static final ThemeStyle BLACK = new ThemeStyle(new RGB(0, 0, 0), 0);
 	public static final ThemeStyle WHITE = new ThemeStyle(new RGB(255, 255, 255), 0);
 
-	@Getter
-	@Setter(AccessLevel.PROTECTED)
 	private RGB rgb;
-	@Getter
 	private final int flags;
+
+	public ThemeStyle(RGB rgb, int flags) {
+		this.rgb = rgb;
+		this.flags = flags;
+	}
 
 	@Override
 	public String toString() {
@@ -52,6 +54,14 @@ public final class ThemeStyle {
 		return result.toString();
 	}
 
+	public RGB getRgb() {
+		return rgb;
+	}
+
+	public int getFlags() {
+		return flags;
+	}
+
 	public boolean isBold() {
 		return (flags & BOLD) > 0;
 	}
@@ -66,6 +76,25 @@ public final class ThemeStyle {
 
 	public boolean isUnderline() {
 		return (flags & UNDERLINE) > 0;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(flags, rgb);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj) {
+			return true;
+		}
+
+		if(!(obj instanceof ThemeStyle)) {
+			return false;
+		}
+
+		ThemeStyle other = (ThemeStyle) obj;
+		return flags == other.flags && Objects.equals(rgb, other.rgb);
 	}
 
 }
