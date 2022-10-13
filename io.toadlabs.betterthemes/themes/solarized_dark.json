@@ -38,6 +38,7 @@
 	"field": "@violet",
 	"constant": "@yellow",
 	"key": "@green",
+	"xmlDirective": "@violet",
 	"xmlTag": "@blue",
 	"xmlAttribute": "@yellow",
 	"uiBackground": "#063643",

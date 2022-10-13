@@ -62,6 +62,7 @@ public final class ThemeKey {
 			DOC_TAG						= register(new ThemeKey("docTag", COMMENT)),
 			DOC_LINK					= register(new ThemeKey("docLink", COMMENT)),
 			DOC_XML_TAG					= register(new ThemeKey("docXmlTag", COMMENT)),
+			XML_DIRECTIVE				= register(new ThemeKey("xmlDirective", DIRECTIVE)),
 			XML_TAG						= register(new ThemeKey("xmlTag", FOREGROUND)),
 			XML_ATTRIBUTE				= register(new ThemeKey("xmlAttribute", FOREGROUND)),
 			KEY							= register(new ThemeKey("key", FIELD)),
