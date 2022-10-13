@@ -97,14 +97,6 @@ public class Utils {
 	}
 
 	public static String toString(InputStream in) throws IOException {
-//		We're on Java 9
-//		D'oh
-//		StringBuilder result = new StringBuilder();
-//		byte[] buffer = new byte[8192];
-//		while((in.read(buffer)) != -1) {
-//			result.append(buffer);
-//		}
-//		return result.toString();
 		return new String(in.readAllBytes(), StandardCharsets.UTF_8);
 	}
 
