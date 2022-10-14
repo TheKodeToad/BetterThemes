@@ -71,7 +71,8 @@ public final class ThemeManager {
 				"visual_studio_dark",
 				"darkest_dark",
 				"solarized_dark",
-				"solarized_light"
+				"solarized_light",
+				"rainbow_drops"
 			}) {
 				register(ThemeData.fromResource("themes/" + theme.concat(".json")));
 			}

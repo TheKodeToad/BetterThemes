@@ -1,0 +1,77 @@
+{
+	"name": "Rainbow Drops",
+	"type": "dark",
+	"removedLine": "#863C43",
+	"comment": "#626262",
+	"taskTag": {
+		"colour": "&comment",
+		"bold": true
+	},
+	"docLink": "#A99C8C",
+	"docXmlTag": {
+		"colour": "#1E789B",
+		"bold": true,
+		"italic": true
+	},
+	"docTag": "#9A8C7C",
+	"class": {
+		"colour": "#1290C3",
+		"bold": true
+	},
+	"abstractClass": "#3EABE6",
+	"interface": "#80F2F6",
+	"enum": {
+		"colour": "#CC81BA",
+		"italic": true
+	},
+	"method": "#A7EC21",
+	"methodDeclaration": {
+		"colour": "#1EB540",
+		"bold": true
+	},
+	"bracket": "#F9FAF4",
+	"number": "#6897BB",
+	"string": "#17C6A3",
+	"operator": "#E6E6FA",
+	"keyword": {
+		"colour": "#DD2867",
+		"bold": true
+	},
+	"annotation": "#BFBFBF",
+	"staticMethod": {
+		"colour": "#96EC3F",
+		"italic": true
+	},
+	"localVariable": "#FFBF26",
+	"localVariableDeclaration": "#ED7F48",
+	"field": "#66E1F8",
+	"staticField": {
+		"colour": "#8DDAF8",
+		"italic": true
+	},
+	"constant": {
+		"colour": "&staticField",
+		"italic": true,
+		"bold": true
+	},
+	"deprecated": {
+		"colour": "#AB1F36",
+		"strikethrough": true
+	},
+	"inheritedMethod": "#CDF668",
+	"abstractMethod": "#80F6A7",
+	"argument": "#79ABFF",
+	"templateArgument": "#D7837F",
+	"templateParameter": "#BFA4A4",
+	"background": "#202020",
+	"currentLine": "#363636",
+	"foreground": "#D9E8F7",
+	"lineNumber": "#626262",
+	"selectionBackground": "#3E515D",
+	"selectionForeground": "#94CEEF",
+	"xmlTag": {
+		"colour": "#03A8D8",
+		"bold": true
+	},
+	"xmlAttribute": "#A7EC21"
+}
