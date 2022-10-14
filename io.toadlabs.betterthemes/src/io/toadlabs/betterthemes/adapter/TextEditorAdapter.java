@@ -19,8 +19,8 @@ public class TextEditorAdapter extends ThemeAdapter {
 		putStandardColour(preferences, "AbstractTextEditor.Color.SelectionBackground", theme.get(ThemeKey.SELECTION_BACKGROUND));
 		putStandardColour(preferences, "AbstractTextEditor.Color.SelectionForeground", theme.get(ThemeKey.SELECTION_FOREGROUND));
 		putStandardColour(preferences, "currentLineColor", theme.get(ThemeKey.CURRENT_LINE));
-		putStandardColour(preferences, "lineNumberColor", theme.get(ThemeKey.LINE_NUMBERS));
-		putStandardColour(preferences, "printMarginColor", theme.get(ThemeKey.LINE_NUMBERS));
+		putStandardColour(preferences, "lineNumberColor", theme.get(ThemeKey.LINE_NUMBER));
+		putStandardColour(preferences, "printMarginColor", theme.get(ThemeKey.LINE_NUMBER));
 		putStandardColour(preferences, "occurrenceIndicationColor", theme.get(ThemeKey.OCCURRENCE));
 		putStandardColour(preferences, "LSP4EReadOccurrenceIndicationColor", theme.get(ThemeKey.OCCURRENCE));
 		putStandardColour(preferences, "org.eclipse.cdt.ui.occurrenceIndicationColor", theme.get(ThemeKey.OCCURRENCE));

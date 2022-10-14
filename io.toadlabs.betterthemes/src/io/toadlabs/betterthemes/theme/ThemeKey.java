@@ -24,7 +24,7 @@ public final class ThemeKey {
 			SELECTION_BACKGROUND 		= register(new ThemeKey("selectionBackground", BACKGROUND)),
 			SELECTION_FOREGROUND 		= register(new ThemeKey("selectionForeground", FOREGROUND)),
 			CURRENT_LINE				= register(new ThemeKey("currentLine", BACKGROUND)),
-			LINE_NUMBERS				= register(new ThemeKey("lineNumbers", FOREGROUND)),
+			LINE_NUMBER					= register(new ThemeKey("lineNumber", FOREGROUND)),
 			COMMENT						= register(new ThemeKey("comment", FOREGROUND)),
 			MULTILINE_COMMENT			= register(new ThemeKey("multilineComment", COMMENT)),
 			TASK_TAG					= register(new ThemeKey("taskTag", COMMENT)),
