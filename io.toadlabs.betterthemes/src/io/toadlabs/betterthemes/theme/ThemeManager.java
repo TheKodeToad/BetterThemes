@@ -69,9 +69,10 @@ public final class ThemeManager {
 				"one_dark",
 				"one_light",
 				"visual_studio_dark",
-				"darkest_dark",
+				"visual_studio_light",
 				"solarized_dark",
 				"solarized_light",
+				"darkest_dark",
 				"rainbow_drops"
 			}) {
 				register(ThemeData.fromResource("themes/" + theme.concat(".json")));
