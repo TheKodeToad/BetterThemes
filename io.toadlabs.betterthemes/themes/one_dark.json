@@ -29,7 +29,7 @@
 	"foreground": "@syntax-fg",
 	"background": "@syntax-bg",
 	"currentLine": "#2C323C",
-	"lineNumbers": "#4B5363",
+	"lineNumber": "#4B5363",
 	"selectionBackground": "#3E4451",
 	"comment": {
 		"colour": "@mono-3",

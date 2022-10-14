@@ -24,7 +24,7 @@
 	"foreground": "@foreground",
 	"selectionBackground": "#264F78",
 	"currentLine": "#282828",
-	"lineNumbers": "#858585",
+	"lineNumber": "#858585",
 	"comment": "@green",
 	"keyword": "@blue",
 	"number": "@lightGreen",

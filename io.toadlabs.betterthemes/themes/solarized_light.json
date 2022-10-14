@@ -24,7 +24,7 @@
 	"selectionBackground": "@base00",
 	"selectionForeground": "@base3",
 	"currentLine": "@base2",
-	"lineNumbers": "@base1",
+	"lineNumber": "@base1",
 	"comment": "@base1",
 	"taskTag": {
 		"colour": "@magenta",
