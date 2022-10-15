@@ -9,7 +9,7 @@ public final class PreferenceInitialiser extends AbstractPreferenceInitializer {
 	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = BetterThemes.get().getPreferenceStore();
-		store.setDefault(Preferences.THEME, "Atom One Dark");
+		store.setDefault(Preferences.THEME, "Atom One Dark (built-in)");
 	}
 
 }

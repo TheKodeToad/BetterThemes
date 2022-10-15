@@ -66,7 +66,13 @@ public final class ThemeData {
 			if(!data.has("name")) {
 				throw new ThemeParseException("Expected theme name");
 			}
-			name = data.remove("name").getAsString();
+			String name = data.remove("name").getAsString();
+
+			if(file == null) {
+				name += " (built-in)";
+			}
+
+			this.name = name;
 
 			if(data.has("variables")) {
 				JsonObject variables = data.remove("variables").getAsJsonObject();

@@ -171,13 +171,7 @@ public final class ThemesPreferencePage extends PreferencePage implements IWorkb
 		selection.removeAll();
 
 		for(ThemeData theme : listThemes) {
-			String name = theme.getName();
-
-			if(theme.getFile().isEmpty()) {
-				name += " (built-in)";
-			}
-
-			selection.add(name);
+			selection.add(theme.getName());
 		}
 
 		selection.setSelection(new String[] { themes.getActiveName() });
