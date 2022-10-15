@@ -9,7 +9,7 @@ import io.toadlabs.betterthemes.*;
 import io.toadlabs.betterthemes.utils.*;
 import org.eclipse.swt.graphics.*;
 
-public final class ThemeData implements Comparable<ThemeData> {
+public final class ThemeData {
 
 	private final Optional<File> file;
 	private final ThemeType type;
@@ -209,11 +209,6 @@ public final class ThemeData implements Comparable<ThemeData> {
 		}
 
 		return result.toString();
-	}
-
-	@Override
-	public int compareTo(ThemeData that) {
-		return name.compareTo(that.name);
 	}
 
 	@Override
