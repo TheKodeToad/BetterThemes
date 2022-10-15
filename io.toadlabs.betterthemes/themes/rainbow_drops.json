@@ -8,17 +8,19 @@
 		"bold": true
 	},
 	"docLink": "#A99C8C",
-	"docXmlTag": {
-		"colour": "#1E789B",
-		"bold": true,
-		"italic": true
+	"docXmlTag": "#1E789B",
+	"docTag": {
+		"colour": "#9A8C7C",
+		"bold": true
 	},
-	"docTag": "#9A8C7C",
 	"class": {
 		"colour": "#1290C3",
 		"bold": true
 	},
-	"abstractClass": "#3EABE6",
+	"abstractClass": {
+		"colour": "#3EABE6",
+		"bold": true
+	},
 	"interface": "#80F2F6",
 	"enum": {
 		"colour": "#CC81BA",
@@ -37,7 +39,12 @@
 		"colour": "#DD2867",
 		"bold": true
 	},
-	"annotation": "#BFBFBF",
+	"annotation": {
+		"colour": "#FF9393",
+		"bold": true,
+		"italic": true
+	},
+	"annotationKey": "#EB4B64",
 	"staticMethod": {
 		"colour": "#96EC3F",
 		"italic": true
@@ -51,8 +58,7 @@
 	},
 	"constant": {
 		"colour": "&staticField",
-		"italic": true,
-		"bold": true
+		"italic": false
 	},
 	"deprecated": {
 		"colour": "#AB1F36",
@@ -61,7 +67,10 @@
 	"inheritedMethod": "#CDF668",
 	"abstractMethod": "#80F6A7",
 	"argument": "#79ABFF",
-	"templateArgument": "#D7837F",
+	"templateArgument": {
+		"colour": "#D7837F",
+		"bold": true
+	},
 	"templateParameter": "#BFA4A4",
 	"background": "#202020",
 	"currentLine": "#363636",
@@ -73,5 +82,6 @@
 		"colour": "#03A8D8",
 		"bold": true
 	},
-	"xmlAttribute": "#A7EC21"
+	"xmlAttribute": "#A7EC21",
+	"occurrence": "#484848"
 }

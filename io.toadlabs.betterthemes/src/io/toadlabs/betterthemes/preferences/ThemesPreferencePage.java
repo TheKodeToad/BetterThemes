@@ -3,7 +3,9 @@ package io.toadlabs.betterthemes.preferences;
 import java.io.*;
 
 import io.toadlabs.betterthemes.*;
+import io.toadlabs.betterthemes.compat.*;
 import io.toadlabs.betterthemes.theme.*;
+import javax.xml.parsers.*;
 import org.eclipse.core.runtime.*;
 import org.eclipse.jface.preference.*;
 import org.eclipse.swt.*;
@@ -13,6 +15,7 @@ import org.eclipse.swt.program.*;
 import org.eclipse.swt.widgets.*;
 import org.eclipse.ui.*;
 import org.eclipse.ui.statushandlers.*;
+import org.xml.sax.*;
 
 public final class ThemesPreferencePage extends PreferencePage implements IWorkbenchPreferencePage {
 
@@ -38,19 +41,13 @@ public final class ThemesPreferencePage extends PreferencePage implements IWorkb
 		GridLayout layout = new GridLayout(2, false);
 		container.setLayout(layout);
 
-//		GridData gridData = new GridData(GridData.fill);
-//		gridData.heightHint = 10;
-
 		selection = new List(container, SWT.BORDER);
-//		selection.setLayoutData(gridData);
 
 		Composite buttons = new Composite(container, SWT.NONE);
 		buttons.setLayout(new GridLayout(1, true));
 		GridData gridData = new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false);
-//		gridData.widthHint = 100;
 
 		buttons.setLayoutData(gridData);
-//		buttons.setSize(200, buttons.getSize().y);
 
 
 		GridData fill = new GridData(GridData.FILL_HORIZONTAL);
@@ -64,19 +61,48 @@ public final class ThemesPreferencePage extends PreferencePage implements IWorkb
 			public void widgetSelected(SelectionEvent ignored) {
 				FileDialog dialog = new FileDialog(getShell());
 				dialog.setText("Select a theme");
-				dialog.setFilterExtensions	(new String[] { "*.json;*.jsonc", "*.*" });
-				dialog.setFilterNames		(new String[] { "Theme files (JSON)", "All files" });
-				String selectedFile = dialog.open();
-				if(selectedFile == null) {
+
+				dialog.setFilterExtensions(new String[] {
+						"*.json;*.jsonc",		"*.xml",						"*.*"
+				});
+				dialog.setFilterNames(new String[] {
+						"Theme files (JSON)",	"Eclipse Color Theme Files",	"All files"
+				});
+
+				String selectedFilePath = dialog.open();
+
+				if(selectedFilePath == null) {
 					return;
 				}
 
+				boolean delete = false;
+				File selectedFile = new File(selectedFilePath);
 				String themeName;
 
 				try {
+					if(selectedFile.getPath().endsWith(".xml")) {
+						try(InputStream fileIn = new FileInputStream(selectedFile)) {
+							delete = true;
+							File tmp = new File(System.getProperty("java.io.tmpdir"), "BetterThemes/"
+									+ selectedFile.getName().substring(0, selectedFile.getName().lastIndexOf('.')) + ".json");
+							tmp.getParentFile().mkdirs();
+							try(FileOutputStream tmpOut = new FileOutputStream(tmp)) {
+								EclipseColorThemeConverter.convert(fileIn, tmpOut);
+							}
+							selectedFile = tmp;
+						}
+						catch(SAXException | ParserConfigurationException ignored2) {
+						}
+					}
+
 					themeName = ThemeManager.get().add(selectedFile);
+
+					if(delete) {
+						selectedFile.delete();
+					}
+
 					if(themeName == null) {
-						StatusManager.getManager().handle(Status.error("Could not install from file - conflicts with built-in theme."));
+						StatusManager.getManager().handle(Status.error("Could not install from file - conflicts with built-in theme."), StatusManager.SHOW);
 						return;
 					}
 				}
@@ -84,6 +110,7 @@ public final class ThemesPreferencePage extends PreferencePage implements IWorkb
 					StatusManager.getManager().handle(Status.error("Invalid theme.", error), StatusManager.SHOW);
 					return;
 				}
+
 				loadThemes();
 				selection.setSelection(new String[] { themeName });
 				removeButton.setEnabled(true);
@@ -144,7 +171,13 @@ public final class ThemesPreferencePage extends PreferencePage implements IWorkb
 		selection.removeAll();
 
 		for(ThemeData theme : listThemes) {
-			selection.add(theme.getName());
+			String name = theme.getName();
+
+			if(theme.getFile().isEmpty()) {
+				name += " (built-in)";
+			}
+
+			selection.add(name);
 		}
 
 		selection.setSelection(new String[] { themes.getActiveName() });

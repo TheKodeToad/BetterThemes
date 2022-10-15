@@ -163,12 +163,10 @@ public final class ThemeManager {
 
 	/**
 	 * Adds a theme to the theme folder.
-	 * @param filepath The file path.
-	 * @return Whether the theme was successfully added.
+	 * @param file The file.
+	 * @return The theme name, or <code>null</code> if the theme was not added.
 	 */
-	public String add(String filepath) throws IOException, ThemeParseException {
-		File file = new File(filepath);
-
+	public String add(File file) throws IOException, ThemeParseException {
 		ThemeData theme = ThemeData.fromFile(file);
 
 		if(themes.containsKey(theme.getName())) {
