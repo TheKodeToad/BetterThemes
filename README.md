@@ -38,6 +38,9 @@ Preferences screen
 
 ## TODO
 - [x] Syntax theming
+- [x] Importing Eclipse Color Theme files.
+- [ ] Apply to console (including ANSI).
+- [ ] Apply to Javadoc and other hovers.
 - [ ] UI theming
 - [ ] Icon theming
 
