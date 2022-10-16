@@ -55,5 +55,6 @@
 		"colour": "@mono-2",
 		"strikethrough": true
 	},
-	"occurrence": "#E6E6E6"
+	"occurrence": "#E6E6E6",
+	"error": "@hue-5"
 }

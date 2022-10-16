@@ -54,5 +54,9 @@
             class="io.toadlabs.betterthemes.adapter.AntAdapter"
             plugin="org.eclipse.ant.ui">
       </adapter>
+      <adapter
+            class="io.toadlabs.betterthemes.adapter.DebugUiAdapter"
+            plugin="org.eclipse.debug.ui">
+      </adapter>
    </extension>
 </plugin>

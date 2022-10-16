@@ -56,5 +56,6 @@
 		"strikethrough": true
 	},
 	"macro": "@hue-1",
-	"occurrence": "#343C47"
+	"occurrence": "#343C47",
+	"error": "@hue-5"
 }
