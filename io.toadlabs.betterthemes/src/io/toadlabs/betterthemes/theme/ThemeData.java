@@ -147,6 +147,21 @@ public final class ThemeData {
 
 				properties.put(key, new ThemeStyle(colour, flags));
 			}
+
+			properties.putIfAbsent(ThemeKey.FOREGROUND,
+					this.type == ThemeType.LIGHT ? ThemeStyle.BLACK : ThemeStyle.WHITE);
+			properties.putIfAbsent(ThemeKey.BACKGROUND,
+					this.type == ThemeType.DARK ? ThemeStyle.BLACK : ThemeStyle.WHITE);
+			properties.putIfAbsent(ThemeKey.ERROR, new ThemeStyle(new RGB(255, 0, 0), 0));
+
+			if(!has(ThemeKey.CURRENT_INSTRUCTION_POINTER)) {
+				properties.put(ThemeKey.CURRENT_INSTRUCTION_POINTER, this.type == ThemeType.LIGHT ? new ThemeStyle(new RGB(198, 219, 174), 0) :  new ThemeStyle(new RGB(90, 90, 90), 0));
+				if(!has(ThemeKey.DEBUG_CALL_STACK)) {
+					properties.put(ThemeKey.CURRENT_INSTRUCTION_POINTER,
+							this.type == ThemeType.LIGHT ? new ThemeStyle(new RGB(219, 235, 204), 0)
+									: properties.get(ThemeKey.CURRENT_INSTRUCTION_POINTER));
+				}
+			}
 		}
 		catch(UnsupportedOperationException | IllegalStateException error) {
 			throw new ThemeParseException(error);

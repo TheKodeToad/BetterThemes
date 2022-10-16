@@ -15,7 +15,7 @@ public class TextEditorAdapter extends ThemeAdapter {
 		putStandardColour(preferences, "AbstractTextEditor.Color.Foreground", theme.get(ThemeKey.FOREGROUND));
 		preferences.putBoolean("AbstractTextEditor.Color.SelectionBackground.SystemDefault", false);
 		preferences.putBoolean("AbstractTextEditor.Color.SelectionForeground.SystemDefault", false);
-		putStandardColour(preferences, "AbstractTextEditor.Color.FindScope", theme.get(ThemeKey.SELECTION_BACKGROUND));
+		putStandardColour(preferences, "AbstractTextEditor.Color.FindScope", theme.get(ThemeKey.FIND_SCOPE));
 		putStandardColour(preferences, "AbstractTextEditor.Color.SelectionBackground", theme.get(ThemeKey.SELECTION_BACKGROUND));
 		putStandardColour(preferences, "AbstractTextEditor.Color.SelectionForeground", theme.get(ThemeKey.SELECTION_FOREGROUND));
 		putStandardColour(preferences, "currentLineColor", theme.get(ThemeKey.CURRENT_LINE));
@@ -29,6 +29,10 @@ public class TextEditorAdapter extends ThemeAdapter {
 		putStandardColour(preferences, "org.eclipse.cdt.ui.writeOccurrenceIndicationColor", theme.get(ThemeKey.WRITE_OCCURRENCE));
 		putStandardColour(preferences, "TextOccurrenceIndicationColor", theme.get(ThemeKey.TEXT_OCCURRENCE));
 		putStandardColour(preferences, "LSP4ETextOccurrenceIndicationColor", theme.get(ThemeKey.WRITE_OCCURRENCE));
+		putStandardColour(preferences, "searchResultIndicationColor", theme.get(ThemeKey.SEARCH_RESULT));
+		putStandardColour(preferences, "filteredSearchResultIndicationColor", theme.get(ThemeKey.FILTERED_SEARCH_RESULT));
+		putStandardColour(preferences, "currentIPIndication", theme.get(ThemeKey.CURRENT_INSTRUCTION_POINTER));
+		putStandardColour(preferences, "secondaryIPIndication", theme.get(ThemeKey.DEBUG_CALL_STACK));
 
 		if(theme.has(ThemeKey.ADDED_LINE)) {
 			putStandardColour(preferences, "additionIndicationColor", theme.get(ThemeKey.ADDED_LINE));

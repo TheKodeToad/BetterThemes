@@ -8,7 +8,7 @@ public final class ThemeStyle {
 
 	public static final int BOLD = 1, ITALIC = 2, STRIKETHOUGH = 4, UNDERLINE = 8;
 
-	public static final ThemeStyle BLACK = new ThemeStyle(new RGB(0, 0, 0), 0);
+	public static final ThemeStyle BLACK = new ThemeStyle(new RGB(30, 30, 30), 0);
 	public static final ThemeStyle WHITE = new ThemeStyle(new RGB(255, 255, 255), 0);
 
 	private RGB rgb;

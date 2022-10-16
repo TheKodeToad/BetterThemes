@@ -118,6 +118,21 @@ public class EclipseColorThemeConverter {
 			case "deletionIndication":
 				property = ThemeKey.REMOVED_LINE.getId();
 				break;
+			case "findScope":
+				property = ThemeKey.FIND_SCOPE.getId();
+				break;
+			case "searchResultIndication":
+				property = ThemeKey.SEARCH_RESULT.getId();
+				break;
+			case "filteredSearchResultIndication":
+				property = ThemeKey.FILTERED_SEARCH_RESULT.getId();
+				break;
+			case "debugCurrentInstructionPointer":
+				property = ThemeKey.CURRENT_INSTRUCTION_POINTER.getId();
+				break;
+			case "debugSecondaryInstructionPointer":
+				property = ThemeKey.DEBUG_CALL_STACK.getId();
+				break;
 			case "singleLineComment":
 				property = ThemeKey.COMMENT.getId();
 				break;
