@@ -39,6 +39,7 @@ Preferences screen
 ## TODO
 - [x] Syntax theming
 - [x] Importing Eclipse Color Theme files.
+- [ ] Allow targetting specific type of keyword - constants and primitive types.
 - [ ] Apply to console (including ANSI).
 - [ ] Apply to Javadoc and other hovers.
 - [ ] UI theming
